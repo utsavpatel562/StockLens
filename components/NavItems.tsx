@@ -12,16 +12,19 @@ const NavItems = () => {
   };
 
   return (
-    <ul className="flex flex-col sm:flex-row p-2 gap-3 sm:gap-10 font-medium">
-      {NAV_ITEMS.map(({ href, title }) => (
-        <li key={href}>
+    <ul className="flex flex-col sm:flex-row gap-3 sm:gap-10 font-medium">
+      {NAV_ITEMS.map(({ href, label }) => (
+        <li
+          key={href}
+          className="hover:bg-indigo-200 p-2 hover:text-gray-900 text-gray-200 rounded-full md:w-[100px] text-center"
+        >
           <Link
             href={href}
-            className={`hover:text-indigo-300 transition-colors ${
-              isActive(href) ? "text-gray-100" : ""
+            className={`transition-colors ${
+              isActive(href) ? "hover:text-gray-900" : ""
             }`}
           >
-            {title}
+            {label}
           </Link>
         </li>
       ))}
