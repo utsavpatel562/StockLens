@@ -16,7 +16,7 @@ const NavItems = () => {
       {NAV_ITEMS.map(({ href, label }) => (
         <li
           key={href}
-          className="hover:bg-indigo-200 p-2 hover:text-gray-900 text-gray-200 rounded-full md:w-[100px] text-center"
+          className="hover:bg-indigo-300 p-2 hover:text-gray-900 text-gray-200 rounded-full md:w-[100px] text-center"
         >
           <Link
             href={href}

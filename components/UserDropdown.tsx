@@ -22,12 +22,12 @@ const UserDropdown = () => {
   const user = { name: "Utsav", email: "utsav@gmail.com" };
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger asChild className="bg-black hover:bg-slate-950">
         <Button
-          className="flex items-center gap-3 text-gray-400 hover:text-indigo-300"
-          variant={"ghost"}
+          className="flex items-center border-none gap-3 md:pt-5 md:pb-5 text-gray-400 hover:text-indigo-300 cursor-pointer"
+          variant={"outline"}
         >
-          <Avatar className="h-8 w-8 cursor-pointer">
+          <Avatar className="h-8 w-8">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback className="bg-indigo-300 text-indigo-950 text-sm font-bold">
               {user.name[0]}
@@ -40,7 +40,7 @@ const UserDropdown = () => {
           </div>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="text-gray-400">
+      <DropdownMenuContent className="text-gray-400 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
         <DropdownMenuLabel>
           <div className="flex relative items-center gap-3 py-2">
             <Avatar className="h-10 w-10">
