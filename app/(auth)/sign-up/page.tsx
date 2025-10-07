@@ -1,7 +1,9 @@
 "use client";
 
 import InputField from "@/components/forms/InputField";
+import SelectField from "@/components/forms/SelectField";
 import { Button } from "@/components/ui/button";
+import { INVESTMENT_GOALS } from "@/lib/constants";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -66,6 +68,17 @@ const SignUp = () => {
           error={errors.password}
           validation={{ required: "Password is required", minLength: 8 }}
         />
+
+        <SelectField
+          name="investmentGoals"
+          label="Investment Goals"
+          placeholder="Select your investment goal"
+          options={INVESTMENT_GOALS}
+          control={control}
+          error={errors.investmentGoals}
+          required
+        />
+
         <Button
           className="indigo-btn w-full mt-5"
           disabled={isSubmitting}
