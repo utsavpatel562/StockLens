@@ -46,6 +46,7 @@ const SelectField = ({
                   </SelectItem>
                 ))}
               </SelectContent>
+              {error && <p className="text-sm text-red-400">{error.message}</p>}
             </Select>
           )}
         />
