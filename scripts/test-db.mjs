@@ -1,6 +1,13 @@
 import 'dotenv/config';
 import mongoose from 'mongoose';
 
+/**
+ * Main function to establish a one-time connection to MongoDB.
+ * - Validates the MongoDB URI.
+ * - Measures connection time.
+ * - Logs connection details.
+ * - Closes the connection gracefully after testing.
+ */
 async function main() {
   const uri = process.env.MONGODB_URI;
   if (!uri) {
@@ -9,10 +16,15 @@ async function main() {
   }
 
   try {
+    // Record the start time for performance measurement
     const startedAt = Date.now();
+
+    // Attempt to connect to MongoDB
+    // bufferCommands: false prevents Mongoose from queuing operations before the connection is established
     await mongoose.connect(uri, { bufferCommands: false });
     const elapsed = Date.now() - startedAt;
 
+    // Retrieve the connected database name and host information (fallback to "(unknown)" if unavailable)
     const dbName = mongoose.connection?.name || '(unknown)';
     const host = mongoose.connection?.host || '(unknown)';
 
