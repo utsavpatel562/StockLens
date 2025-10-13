@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URL; // Get MongoDB connection URI from environment variables
+const MONGODB_URI = process.env.MONGODB_URI; // Get MongoDB connection URI from environment variables
 
 // Extend the global object to store a cached MongoDB connection and promise.
 declare global {
