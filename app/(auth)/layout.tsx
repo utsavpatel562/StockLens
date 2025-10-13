@@ -12,9 +12,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             alt="StockLens logo"
             width={140}
             height={140}
-            className="h-8 w-auto cursor-pointer"
+            className="h-9 w-auto cursor-pointer"
           />
-          <h2 className="text-slate-50 text-2xl font-medium">StockLens</h2>
         </Link>
 
         <div className="pb-6 lg:pb-8 flex-1">{children}</div>

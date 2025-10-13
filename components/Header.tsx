@@ -17,7 +17,6 @@ const Header = () => {
               height={140}
               className="h-8 w-auto cursor-pointer"
             />
-            <h2 className="text-slate-50 text-2xl font-medium">StockLens</h2>
           </Link>
           <nav className="hidden sm:block">
             <NavItems />
