@@ -17,7 +17,7 @@ interface SearchCommandProps {
   renderAs?: "button" | "text";
   label?: string;
   initialStocks: StockWithWatchlistStatus[];
-  onOpenChange?: (open: boolean) => void; // 👈 allows parent to know open state
+  onOpenChange?: (open: boolean) => void; // allows parent to know open state
 }
 
 export default function SearchCommand({
@@ -35,7 +35,7 @@ export default function SearchCommand({
   const isSearchMode = !!searchTerm.trim();
   const displayStocks = isSearchMode ? stocks : stocks?.slice(0, 10);
 
-  // ✅ Keyboard shortcut handler (Cmd+K / Ctrl+K)
+  // Keyboard shortcut handler (Cmd+K / Ctrl+K)
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
@@ -50,9 +50,9 @@ export default function SearchCommand({
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []); // ✅ fixed — stable dependency array (no error)
+  }, []); // fixed — stable dependency array (no error)
 
-  // ✅ Debounced search
+  // Debounced search
   const handleSearch = async () => {
     if (!isSearchMode) return setStocks(initialStocks);
     setLoading(true);
@@ -72,7 +72,7 @@ export default function SearchCommand({
     debouncedSearch();
   }, [searchTerm]);
 
-  // ✅ Select stock closes dialog
+  // Select stock closes dialog
   const handleSelectStock = () => {
     setOpen(false);
     onOpenChange?.(false);

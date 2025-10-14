@@ -20,7 +20,7 @@ const NavItems = ({
 
   return (
     <>
-      {/* ✅ Blur overlay BELOW the dialog */}
+      {/* Blur overlay BELOW the dialog */}
       {isSearchOpen &&
         typeof window !== "undefined" &&
         createPortal(
