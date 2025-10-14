@@ -9,7 +9,7 @@ const Header = ({ user }: { user: User }) => {
     <>
       <header className="sticky top-0 header bg-white/4 backdrop-blur-xl border shadow-lg">
         <div className="container header-wrapper">
-          <Link href={"/"} className="flex items-center gap-2">
+          <Link href={"/"} className="">
             <Image
               src={"/logo.png"}
               alt="StockLens logo"
