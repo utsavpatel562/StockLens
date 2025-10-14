@@ -4,10 +4,10 @@ import React from "react";
 import NavItems from "./NavItems";
 import UserDropdown from "./UserDropdown";
 
-const Header = () => {
+const Header = ({ user }: { user: User }) => {
   return (
     <>
-      <header className="sticky top-0 header bg-white/5 backdrop-blur-lg border shadow-lg">
+      <header className="sticky top-0 header bg-white/4 backdrop-blur-xl border shadow-lg">
         <div className="container header-wrapper">
           <Link href={"/"} className="flex items-center gap-2">
             <Image
@@ -21,7 +21,7 @@ const Header = () => {
           <nav className="hidden sm:block">
             <NavItems />
           </nav>
-          <UserDropdown />
+          <UserDropdown user={user} />
         </div>
       </header>
     </>

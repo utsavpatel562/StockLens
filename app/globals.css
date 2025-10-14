@@ -490,3 +490,16 @@
 .font-emoji {
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
 }
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 4px;               /* Scrollbar width */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454545; /* Blue thumb */
+  border-radius: 9999px;     /* Fully rounded */
+}
+
+::-webkit-scrollbar-track {
+  background: #a7aeba;       /* Light gray track */
+}
