@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { WELCOME_EMAIL_TEMPLATE } from "./templates";
+import { NEWS_SUMMARY_EMAIL_TEMPLATE, WELCOME_EMAIL_TEMPLATE } from "./templates";
 
 /**
  * Create a reusable Nodemailer transporter for sending emails.
@@ -32,3 +32,21 @@ export const sendWelcomeEmail = async({email, name, intro}: WelcomeEmailData) =>
     // Send the email using the configured transporter
     await transporter.sendMail(mailOptions);
 }
+
+export const sendNewsSummaryEmail = async (
+    { email, date, newsContent }: { email: string; date: string; newsContent: string }
+): Promise<void> => {
+    const htmlTemplate = NEWS_SUMMARY_EMAIL_TEMPLATE
+        .replace('{{date}}', date)
+        .replace('{{newsContent}}', newsContent);
+
+    const mailOptions = {
+        from: `"StockLens News" <stocklens@market.pro>`,
+        to: email,
+        subject: `📈 Market News Summary Today - ${date}`,
+        text: `Today's market news summary from StockLens`,
+        html: htmlTemplate,
+    };
+
+    await transporter.sendMail(mailOptions);
+};
