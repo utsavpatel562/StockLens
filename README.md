@@ -1,7 +1,7 @@
 ### 📈 StockLens – AI-Powered Stock Insights Dashboard
 StockLens is an intelligent stock market analysis dashboard 📊 powered by AI-driven insights, real-time data visualization, and a modern, responsive UI. It provides traders and investors with interactive charts, news sentiment analysis, and personalized stock recommendations.
 
-<img src="public/assets/images" alt="demo"/>
+<img src="public/assets/images/dashboard_preview.png" alt="demo"/>
 
 AI insights and summaries are powered by **Google AI Studio**, ensuring accurate and up-to-date market intelligence.
 
