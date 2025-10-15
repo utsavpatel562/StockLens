@@ -1,5 +1,6 @@
 "use server";
 
+import { Watchlist } from "@/database/models/watchlist.model";
 import { connectToDatabase } from "@/database/mongoose";
 
 // This function retrieves all users with valid email addresses
@@ -27,3 +28,47 @@ export const getAllUsersForNewsEmail = async() => {
         return []; // Return an empty array to prevent crashes in case of failure
     }
 }
+
+/**
+ * Add a stock to the user's watchlist
+ */
+export const addToWatchlist = async (userId: string, symbol: string, company: string) => {
+  if (!userId || !symbol) return { success: false, message: "Missing parameters" };
+
+  try {
+    await connectToDatabase();
+
+    const existing = await Watchlist.findOne({ userId, symbol });
+    if (existing) {
+      return { success: true, message: "Already in watchlist" };
+    }
+
+    await Watchlist.create({
+      userId,
+      symbol,
+      company,
+      createdAt: new Date(),
+    });
+
+    return { success: true, message: "Added to watchlist" };
+  } catch (error) {
+    console.error("addToWatchlist error:", error);
+    return { success: false, message: "Database error" };
+  }
+};
+
+/**
+ * Remove a stock from the user's watchlist
+ */
+export const removeFromWatchlist = async (userId: string, symbol: string) => {
+  if (!userId || !symbol) return { success: false, message: "Missing parameters" };
+
+  try {
+    await connectToDatabase();
+    await Watchlist.deleteOne({ userId, symbol });
+    return { success: true, message: "Removed from watchlist" };
+  } catch (error) {
+    console.error("removeFromWatchlist error:", error);
+    return { success: false, message: "Database error" };
+  }
+};

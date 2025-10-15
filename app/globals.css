@@ -124,8 +124,8 @@
 
   /* Vibrant Colors */
   --color-blue-600: #5862FF;
-  --color-yellow-400: #FDD458;
-  --color-yellow-500: #E8BA40;
+  --color-yellow-400: #A693DA;
+  --color-yellow-500: #A693DA;
   --color-teal-400: #0FEDBE;
   --color-red-500: #FF495B;
   --color-orange-500: #FF8243;
@@ -209,7 +209,7 @@
     @apply text-gray-400 font-medium hover:text-indigo-300 hover:underline transition-colors;
   }
   .search-text {
-    @apply cursor-pointer hover:text-yellow-500;
+    @apply cursor-pointer hover:text-indigo-400;
   }
   .search-btn {
     @apply cursor-pointer px-4 py-2 w-fit flex items-center gap-2 text-sm md:text-base bg-yellow-500 hover:bg-yellow-500 text-black font-medium rounded;
@@ -287,7 +287,7 @@
     @apply w-fit cursor-pointer hover:bg-transparent! text-gray-400 hover:text-yellow-500;
   }
   .watchlist-icon-added {
-    @apply !text-yellow-500 hover:!text-yellow-600;
+    @apply !text-yellow-500 hover:!text-indigo-400;
   }
   .watchlist-icon {
     @apply w-8 h-8 rounded-full flex items-center justify-center bg-gray-700/50;
