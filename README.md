@@ -37,7 +37,7 @@ AI insights and summaries are powered by **Google AI Studio**, ensuring accurate
 
 Clone the repository:
 ```bash
-git clone https://github.com/<your-username>/StockLens.git
+git clone https://github.com/utsavpatel562/StockLens.git
 cd StockLens
 ```
 Install dependencies:
@@ -69,5 +69,4 @@ If you find a bug or want to add new features, feel free to open an issue or sub
 ### 🛡️ License
 This project is licensed under the MIT License.
 
-### 📞 Contact
 Made with ❤️ by Utsav Patel
